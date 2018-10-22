@@ -561,121 +561,132 @@ void CSplitSDIView::OnGenerate()
 	str += s_xnum;
 	str += s_ynum;
 	str += s_znum;
-	str += "\n";
-	str += "X_COORDINATES\n";
-	for (int x = 0; x < xnum; x++)
-	{
-		CString tem;
-		tem.Format(_T("%d "), x);
-		str += tem;
-	}
-	str += "\n";
-	str += "Y_COORDINATES\n";
-	for (int y = 0; y < xnum; y++)
-	{
-		CString tem;
-		tem.Format(_T("%d "), y);
-		str += tem;
-	}
-	str += "\n";
-	str += "Z_COORDINATES\n";
-	for (int z = 0; z < xnum; z++)
-	{
-		CString tem;
-		tem.Format(_T("%d "), z);
-		str += tem;
-	}
-	str += "\n";
-	CString temp = _T("");
-	int total = (xnum)*(ynum)*(znum);
-	struct MyStorage *output = new MyStorage[total];
-	memset(output, 0, total * sizeof(MyStorage));
-	//一定要使用memset初始化
-	
 
-	myVertex* pTemp = pDoc->CurPoint;
-	if (pTemp == NULL)
+	//if (xnum == 1 || ynum == 1 || znum == 1)
+	//{
+
+	//}
+	//else
 	{
+		str += "\n";
+		str += "X_COORDINATES\n";
+		for (int x = 0; x < xnum; x++)
+		{
+			CString tem;
+			tem.Format(_T("%d "), x);
+			str += tem;
+		}
+		str += "\n";
+		str += "Y_COORDINATES\n";
+		for (int y = 0; y < ynum; y++)
+		{
+			CString tem;
+			tem.Format(_T("%d "), y);
+			str += tem;
+		}
+		str += "\n";
+		str += "Z_COORDINATES\n";
+		for (int z = 0; z < znum; z++)
+		{
+			CString tem;
+			tem.Format(_T("%d "), z);
+			str += tem;
+		}
+		str += "\n";
+		CString temp = _T("");
+		int total = (xnum)*(ynum)*(znum);
+		struct MyStorage *output = new MyStorage[total];
+		memset(output, 0, total * sizeof(MyStorage));
+		//一定要使用memset初始化
+
+
+		myVertex* pTemp = pDoc->CurPoint;
 		if (pTemp == NULL)
 		{
-			MessageBox(_T("您还没有输入点"), _T("错误提示"), MB_OK);
-			return;
+			if (pTemp == NULL)
+			{
+				MessageBox(_T("您还没有输入点"), _T("错误提示"), MB_OK);
+				return;
+			}
+			else
+			{
+				pTemp = pTemp->next->next;
+			}
 		}
 		else
 		{
-			pTemp = pTemp->next->next;
+			pTemp = pDoc->HeadPoint->next;
 		}
-	}
-	else
-	{
-		pTemp = pDoc->HeadPoint->next;
-	}
 
-	int cnt = 0;
-	int cnt_roll = 0;
-	while (pTemp != NULL)
-	{
-		//数据文件的读取顺序是先变X再Y后Z
-		for (double i = 0.5; i <= znum - 0.5; i++)
+		int cnt = 0;
+		int cnt_roll = 0;
+		while (pTemp != NULL)
 		{
-			for (double j = 0.5; j <= ynum - 0.5; j++)
+			//数据文件的读取顺序是先变X再Y后Z
+			for (double i = 0.5; i <= znum - 0.5; i++)
 			{
-				for (double k = 0.5; k <= xnum - 0.5; k++)
+				for (double j = 0.5; j <= ynum - 0.5; j++)
 				{
-					//double tempCon = pow(i - pTemp->x, 2.0) + pow(j - pTemp->y, 2.0) + pow(k - pTemp->z, 2.0);
-					//tempCon = (pTemp->quan)*constant / pow(tempCon, 3);
-					//if (pTemp->sign)
-					//{
-					//	output[cnt].xx += (tempCon*(k - pTemp->x));
-					//	output[cnt].yy += (tempCon*(j - pTemp->y));
-					//	output[cnt].zz += (tempCon*(i - pTemp->z));
-					//}
-					//else
-					//{
-					//	output[cnt].xx += (-1)*(tempCon*(k - pTemp->x));
-					//	output[cnt].yy += (-1)*(tempCon*(j - pTemp->y));
-					//	output[cnt].zz += (-1)*(tempCon*(i - pTemp->z));
-					//}
-
-					double temp = 0.0;
-					double temp2 = 0.0;
-					temp2 = pow(k - pTemp->x,2.0)+pow(j - pTemp->y,2.0)+pow(i - pTemp->z,2.0);
-					temp2 = pow(temp2, 0.5);
-					temp2 = abs(temp2);
-
-					if (pTemp->sign)
+					for (double k = 0.5; k <= xnum - 0.5; k++)
 					{
-						temp = pTemp->quan / (constant*pow(temp2, 3));
-					}
-					else
-					{
-						temp = (-1.0)*pTemp->quan / (constant*pow(temp2, 3));
-					}
-					
-					output[cnt].xx += temp*(k - pTemp->x);
-					output[cnt].yy += temp*(j - pTemp->y);
-					output[cnt].zz += temp*(i - pTemp->z);
+						//double tempCon = pow(i - pTemp->x, 2.0) + pow(j - pTemp->y, 2.0) + pow(k - pTemp->z, 2.0);
+						//tempCon = (pTemp->quan)*constant / pow(tempCon, 3);
+						//if (pTemp->sign)
+						//{
+						//	output[cnt].xx += (tempCon*(k - pTemp->x));
+						//	output[cnt].yy += (tempCon*(j - pTemp->y));
+						//	output[cnt].zz += (tempCon*(i - pTemp->z));
+						//}
+						//else
+						//{
+						//	output[cnt].xx += (-1)*(tempCon*(k - pTemp->x));
+						//	output[cnt].yy += (-1)*(tempCon*(j - pTemp->y));
+						//	output[cnt].zz += (-1)*(tempCon*(i - pTemp->z));
+						//}
 
-					cnt++;
+						double temp = 0.0;
+						double temp2 = 0.0;
+						temp2 = pow(k - pTemp->x, 2.0) + pow(j - pTemp->y, 2.0) + pow(i - pTemp->z, 2.0);
+						temp2 = pow(temp2, 0.5);
+						temp2 = abs(temp2);
+
+						if (pTemp->sign)
+						{
+							temp = pTemp->quan / (constant*pow(temp2, 3));
+						}
+						else
+						{
+							temp = (-1.0)*pTemp->quan / (constant*pow(temp2, 3));
+						}
+
+						output[cnt].xx += temp * (k - pTemp->x);
+						output[cnt].yy += temp * (j - pTemp->y);
+						output[cnt].zz += temp * (i - pTemp->z);
+
+						cnt++;
+					}
 				}
 			}
+			cnt = 0;
+			pTemp = pTemp->next;
 		}
-		cnt = 0;
-		pTemp = pTemp->next;
+
+		for (int i = 0; i < total; i++)
+		{
+			temp.Format(_T("%.4f"), output[i].xx);
+			str += temp;
+			str += " ";
+			temp.Format(_T("%.4f"), output[i].yy);
+			str += temp;
+			str += " ";
+			temp.Format(_T("%.4f"), output[i].zz);
+			str += temp;
+			str += "\n";
+		}
 	}
-		
-	for (int i = 0; i < total; i++)
-	{
-		temp.Format(_T("%.4f"), output[i].xx);
-		str += temp;
-		str += " ";
-		temp.Format(_T("%.4f"), output[i].yy);
-		str += temp;
-		str += " ";
-		temp.Format(_T("%.4f"), output[i].zz);
-		str += temp;
-		str += "\n";
-	}
+
+
+	
 	//delete output;
 	CString m_txtName = _T("myField");
 	CStdioFile file;
