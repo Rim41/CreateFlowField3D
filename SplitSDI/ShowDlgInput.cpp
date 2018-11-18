@@ -138,12 +138,12 @@ void CShowDlgInput::OnBnClickedButtonUpdatecoor()
 	int max = 0, min = 0;
 	max = FindMax(m_rangeX, m_rangeY, m_rangeZ);
 	min = FindMin(m_rangeX, m_rangeY, m_rangeZ);
-	if (max / min > 10)
-	{
-		MessageBox(_T("您设置的坐标比例不合适，请修改"));
-		UpdateData(FALSE);
-		return;
-	}
+	//if (max / min > 10)
+	//{
+	//	MessageBox(_T("您设置的坐标比例不合适，请修改"));
+	//	UpdateData(FALSE);
+	//	return;
+	//}
 	pDoc->m_range_x = m_rangeX;
 	pDoc->m_range_y = m_rangeY;
 	pDoc->m_range_z = m_rangeZ;

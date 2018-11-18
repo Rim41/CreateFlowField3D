@@ -60,7 +60,7 @@ BOOL CSplitSDIDoc::OnNewDocument()
 
 	// TODO: 在此添加重新初始化代码
 	// (SDI 文档将重用该文档)
-	SetTitle(_T("流场生成程序3D"));
+	SetTitle(_T("三维流场生成程序"));
 	return TRUE;
 }
 

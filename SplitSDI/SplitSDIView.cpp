@@ -40,7 +40,7 @@ static int flag_show_stress = 0;
 
 int ran = 5;
 int xnum, ynum, znum;
-int constant = 1000;
+double constant = 1;
 
 // CSplitSDIView
 
@@ -70,7 +70,7 @@ CSplitSDIView::CSplitSDIView()
 	m_ord = 1;
 	mul = 1;
 	totalNum = 0;
-	constant = 10;
+	constant = 11e-11;
 	xnum = ynum = znum = 10;
 
 }
@@ -673,13 +673,13 @@ void CSplitSDIView::OnGenerate()
 
 		for (int i = 0; i < total; i++)
 		{
-			temp.Format(_T("%.4f"), output[i].xx);
+			temp.Format(_T("%f"), output[i].xx);
 			str += temp;
 			str += " ";
-			temp.Format(_T("%.4f"), output[i].yy);
+			temp.Format(_T("%f"), output[i].yy);
 			str += temp;
 			str += " ";
-			temp.Format(_T("%.4f"), output[i].zz);
+			temp.Format(_T("%f"), output[i].zz);
 			str += temp;
 			str += "\n";
 		}
