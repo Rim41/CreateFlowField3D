@@ -52,14 +52,13 @@
 #endif
 
 
-#include <gl\gl.h> 
-#include <gl\glu.h>
-#include <gl\glut.h>
 
-#pragma comment( lib, "opengl32.lib" )	 
-#pragma comment( lib, "glu32.lib" )	   
-#pragma comment( lib, "glut32.lib")
+#include <GL/glew.h>
+#include <GL/glut.h>
+#pragma comment(lib,"opengl32.lib")
+#pragma comment(lib,"glu32.lib")
+#pragma comment(lib,"glew32.lib")
 #pragma comment( lib, "glut64.lib" )
-#pragma comment( lib, "glaux.lib" )
+//#pragma comment( lib, "glaux.lib" )
 
 #define _CRT_SECURE_NO_WARNINGS  
