@@ -4,7 +4,7 @@
 
 ## 1 概述
 
-本程序基于微软基础类库（MFC, Microsoft Foundation Classes)和 OpenGL，使用 Visual Studio 2017 开发，在本页面可以下载得到本程序的 Debug/Release 版本。使用下载得到的文件，并按照本文档操作指引，可以在本地搭建开发环境。
+本程序基于微软基础类库（MFC, Microsoft Foundation Classes)和 OpenGL，使用 Visual Studio 2015 开发，在本页面可以下载得到本程序的 Debug/Release 版本。使用下载得到的文件，并按照本文档操作指引，可以在本地搭建开发环境。
 
 
 
