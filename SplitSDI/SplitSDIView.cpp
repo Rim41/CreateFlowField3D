@@ -562,11 +562,6 @@ void CSplitSDIView::OnGenerate()
 	str += s_ynum;
 	str += s_znum;
 
-	//if (xnum == 1 || ynum == 1 || znum == 1)
-	//{
-
-	//}
-	//else
 	{
 		str += "\n";
 		str += "X_COORDINATES\n";
@@ -629,21 +624,6 @@ void CSplitSDIView::OnGenerate()
 				{
 					for (double k = 0.5; k <= xnum - 0.5; k++)
 					{
-						//double tempCon = pow(i - pTemp->x, 2.0) + pow(j - pTemp->y, 2.0) + pow(k - pTemp->z, 2.0);
-						//tempCon = (pTemp->quan)*constant / pow(tempCon, 3);
-						//if (pTemp->sign)
-						//{
-						//	output[cnt].xx += (tempCon*(k - pTemp->x));
-						//	output[cnt].yy += (tempCon*(j - pTemp->y));
-						//	output[cnt].zz += (tempCon*(i - pTemp->z));
-						//}
-						//else
-						//{
-						//	output[cnt].xx += (-1)*(tempCon*(k - pTemp->x));
-						//	output[cnt].yy += (-1)*(tempCon*(j - pTemp->y));
-						//	output[cnt].zz += (-1)*(tempCon*(i - pTemp->z));
-						//}
-
 						double temp = 0.0;
 						double temp2 = 0.0;
 						temp2 = pow(k - pTemp->x, 2.0) + pow(j - pTemp->y, 2.0) + pow(i - pTemp->z, 2.0);
