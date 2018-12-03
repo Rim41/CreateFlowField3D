@@ -6,6 +6,8 @@
 
 本程序是北京理工大学计算机学院下属可视化与医学成像课题组的研究成果。
 
+课题组主页：http://iitlab.bit.edu.cn/mcislab/~zhangwenyao/index.htm
+
 如有疑问，请联系张文耀老师（zhwenyao@bit.edu.cn）。
 
 ## 1 概述
@@ -38,7 +40,7 @@
 
 本程序开发基于 Visual Studio 2015，不同的 IDE 版本开发存在部分差异。
 
-### 3.1 在 Visual Studio 2015 中配置 OpenGL 开发环境
+### 3.1 在 Visual Studio 2015 中配置 64 位 OpenGL 开发环境
 
 #### 3.1.1 配置链接库
 
@@ -54,7 +56,7 @@
 
 打开 Lib 文件夹中的 library文件夹，将下面的所有文件复制到`C:\Program Files(x86)\Microsoft Visual Studio 14.0\VC\lib`
 
-### 3.2 在 Visual Studio 2017 中配置 OpenGL 开发环境
+### 3.2 在 Visual Studio 2017 中配置 64 位 OpenGL 开发环境
 
 在 Visual Studio 2017 中，IDE 的安装目录发生了改动，故配置开发环境的方式也发生了变化，在这里直接从 IDE 界面入手，进行相关配置。同样的 Visual Studio 2015 也可以参考这部分进行配置，在这里不再赘述。
 
