@@ -46,7 +46,7 @@
 
 首先找到 Visual Studio 2015 的安装目录。
 
-![1.png](https://github.com/Rim41/CreateFlowField3D/master/Figure/1.png)
+![1.png](https://github.com/Rim41/CreateFlowField3D/blob/master/Figure/1.png)
 
 #### 3.1.2 配置库
 
