@@ -1,10 +1,10 @@
-# “三维可视化流场生成程序” 开发文档
+# “三维矢量场生成程序” 开发文档
 
-`作者：Quwen Zhou` `时间：2018年8月22日` `版本：V1.0`
+`时间：2018年11月23日` `版本：V2.0`
 
 ## 1 概述
 
-本程序基于微软基础类库（MFC, Microsoft Foundation Classes)和 OpenGL，使用 Visual Studio 2017 开发，在本页面可以下载得到本程序的 Debug/Release 版本。使用下载得到的文件，并按照本文档操作指引，可以在本地搭建开发环境。
+本程序基于微软基础类库（MFC, Microsoft Foundation Classes)和 OpenGL，使用 Visual Studio 2015 开发，在本页面可以下载得到本程序的 Debug/Release 版本。使用下载得到的文件，并按照本文档操作指引，可以在本地搭建开发环境。
 
 
 
