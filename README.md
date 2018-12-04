@@ -1,14 +1,12 @@
 # “三维矢量场生成程序” 开发文档
 
-`时间：2018年12月3日` `版本：V2.1`
+`时间：2018年12月3日` `版本：V2.2`
 
-## 0 引言
+## 0 说明
 
-本程序是北京理工大学计算机学院下属可视化与医学成像课题组的研究成果。
+本程序在北京理工大学计算机学院下属可视化与医学成像课题组老师指导下完成。
 
-课题组主页：http://iitlab.bit.edu.cn/mcislab/~zhangwenyao/index.htm
 
-如有疑问，请联系张文耀老师（zhwenyao@bit.edu.cn）。
 
 ## 1 概述
 
@@ -53,19 +51,19 @@
 1. 64 位 OpenGL 程序的库目录，在`~\Microsoft Visual Studio 14.0\VC\lib\amd64`（目录1）
 
 2. 将`~\Lib\glew-2.1.0\lib\Release\x64`下的两个文件放入目录1
-3. 将`~\Library\glut-3.7.6-bin-32and64\glut-3.7.6-bin`下的`glut64.lib`放入目录1
+3. 将`~\Lib\glut-3.7.6-bin-32and64\glut-3.7.6-bin`下的`glut64.lib`放入目录1
 
 #### 3.1.3 配置头文件
 
 1. 打开`~\Microsoft Visual Studio14.0\VC\include`，新建文件夹，命名为“GL”，进入该文件夹（目录2）
-2. 将`~\Library\glew-2.1.0\include\GL`下的四个文件放入目录2
-3. 将`~\Library\glut-3.7.6-bin-32and64\glut-3.7.6-bin`下的`glut.h`放入目录2
+2. 将`~\Lib\glew-2.1.0\include\GL`下的四个文件放入目录2
+3. 将`~\Lib\glut-3.7.6-bin-32and64\glut-3.7.6-bin`下的`glut.h`放入目录2
 
 #### 3.1.4 配置链接库
 
 1. 进入`C:\Windows\System32`（目录3）
-2. 将`~\Library\glew-2.1.0\bin\Release\x64`下的`glew32.dll`文件放到目录3中
-3. 将`~\Library\glut-3.7.6-bin-32and64\glut-3.7.6-bin`下的两个文件放到目录3中
+2. 将`~\Lib\glew-2.1.0\bin\Release\x64`下的`glew32.dll`文件放到目录3中
+3. 将`~\Lib\glut-3.7.6-bin-32and64\glut-3.7.6-bin`下的两个文件放到目录3中
 
 #### 3.1.5 确认stdafx.h
 
